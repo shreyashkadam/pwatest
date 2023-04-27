@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: grey;
+}
+
+.container{
+    min-width: 1000px;
+    margin: 0 auto;
+}
+
+.apply_box{
+    max-width: 700px;
+    padding: 20px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 50px;
+    box-shadow: 4px;
+    border-radius: 4px;
+}
+
+.fontsmally{
+    font-size: 20px;
+}

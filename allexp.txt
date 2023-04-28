@@ -1,0 +1,672 @@
+//Creating First Application with AppBar and Single Child
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('First Application'),
+        ),
+        body: const Center(
+          child: Text('Hello World'),
+          )
+      )
+    );
+  }
+}
+
+-------------------------------------------------------
+
+//AppBar with MultiChild in Column wrap
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('First Application'),
+        ),
+        body: Column(
+          children: const [
+                Text('Hello World'),
+                Text('Hello World'),
+                Text('Hello World'),
+          ],
+        )
+      )
+    );
+  }
+}
+
+-----------------------------------------------------------------
+
+//AppBar with MultiChild in Row Wrap
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('First Application'),
+        ),
+        body: Row(
+              children: const [
+                    Text('Hello World'),
+                    Text('Hello World'),
+                    Text('Hello World'),
+              ],                     
+        )
+      )
+    );
+  }
+}
+
+----------------------------------------------------------
+
+//Container
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('First Application'),
+        ),
+        body: Container(
+          width: 200,
+          height: 200,
+          color: Colors.amber,
+          child: const Text('Container'),
+        )
+      )
+    );
+  }
+}
+
+----------------------------------------------------------------
+
+//TextButton
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+void _onpressed(){
+  print('Buton Presed');
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('First Application'),
+        ),
+        body: Row(
+          children: [
+            TextButton(onPressed: _onpressed , child: Text('TextButton'))
+          ],
+        )
+      )
+    );
+  }
+}
+
+-----------------------------------------------------------------------------------------------------
+
+//Elevated Buton
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+void _onpressed(){
+  print('Buton Presed');
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('First Application'),
+        ),
+        body: Row(
+          children: [
+            ElevatedButton(onPressed: _onpressed , child: Text('TextButton'))
+          ],
+        )
+      )
+    );
+  }
+}
+
+-------------------------------------------------------------------------------------------------
+
+//Outlined Button
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+void _onpressed(){
+  print('Buton Presed');
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('First Application'),
+        ),
+        body: Row(
+          children: [
+            OutlinedButton(onPressed: _onpressed , child: Text('TextButton'))
+          ],
+        )
+      )
+    );
+  }
+}
+
+--------------------------------------------------------------------------------
+
+//TextStyle
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+void _onpressed(){
+  print('Buton Presed');
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('First Application'),
+        ),
+        body: Row(
+          children: [
+            OutlinedButton(onPressed: _onpressed , child: Text('TextButton',
+            style: TextStyle(color: Colors.amber, fontSize: 28),
+            ))
+          ],
+        )
+      )
+    );
+  }
+}
+
+--------------------------------------------------------------------------------------
+
+//ListView
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+void _onpressed(){
+  print('Buton Presed');
+}
+
+class MyApp extends StatelessWidget {
+  final List<String> items = ['Items 1', 'Items 2', 'Items3'];
+  MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('First Application'),
+        ),
+        body: ListView(
+          children: [
+            for (var item in items)
+            Row(
+              children:[
+                Icon(Icons.check),
+                Text(item),
+              ],
+            )
+          ],
+        )
+        )
+      );
+  }
+}
+
+------------------------------------------------------------------------------------------------
+
+//Drawer
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+void _onpressed(){
+  print('Buton Presed');
+}
+
+class MyApp extends StatelessWidget {
+  final List<String> items = ['Items 1', 'Items 2', 'Items3'];
+  MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('First Application'),
+        ),
+        drawer: Drawer(
+          child: ListView(
+            children: const [
+              UserAccountsDrawerHeader(
+                accountName: Text("Kumaran"), 
+                accountEmail: Text("thevarmit221@gst.sies.edu.in"),
+                currentAccountPicture: CircleAvatar(
+                  child: Text('KK'),
+                ),
+                ),
+                ListTile(
+                  title: Text("Mailpage"),
+                  leading: Icon(Icons.mail),
+                )
+            ],
+          )
+        ),
+        body: ListView(
+          children: [
+            for (var item in items)
+            Row(
+              children:[
+                Icon(Icons.check),
+                Text(item),
+              ],
+            )
+          ],
+        )
+        )
+      );
+  }
+}
+
+------------------------------------------------------------------------------------------
+
+//Images
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  final List<String> items = ['Items 1', 'Items 2', 'Items3'];
+  MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('First Application'),
+        ),
+        drawer: Drawer(
+          child: ListView(
+            children: const [
+              UserAccountsDrawerHeader(
+                accountName: Text("Kumaran"), 
+                accountEmail: Text("thevarmit221@gst.sies.edu.in"),
+                currentAccountPicture: CircleAvatar(
+                  child: Text('KK'),
+                ),
+                ),
+                ListTile(
+                  title: Text("Mailpage"),
+                  leading: Icon(Icons.mail),
+                )
+            ],
+          )
+        ),
+        body: Center(
+          child: Image.network("https://yt3.googleusercontent.com/ytc/AGIKgqM8zh66fZqGKeTkopHaU9GM4zvyuFnQhXThr37u=s900-c-k-c0x00ffffff-no-rj"),
+          )
+
+        )
+      );
+  }
+}
+
+----------------------------------------------------------------------------------------------------------
+
+//Form with validation
+
+import 'package:flutter/material.dart'; 
+
+ 
+
+ 
+
+void main() { runApp(const MyApp()); 
+
+} 
+
+ 
+
+ 
+
+class MyApp extends StatelessWidget { 
+
+const MyApp({Key? key}) : super(key: key); 
+
+ 
+
+ 
+
+// This widget is the root of your application. @override 
+
+Widget build(BuildContext context) { 
+
+const appTitle = 'Form Validation Demo'; 
+
+ 
+
+ 
+
+return MaterialApp( title: appTitle, home: Scaffold( 
+
+appBar: AppBar( 
+
+title: const Text(appTitle), 
+
+), 
+
+body: const MycustomForm(), 
+
+), 
+
+); 
+
+} 
+
+} 
+
+ 
+
+ 
+
+class MycustomForm extends StatefulWidget { 
+
+const MycustomForm({Key? key}) : super(key: key); 
+
+ 
+
+ 
+
+@override 
+
+MyCustomFormState createState() { return MyCustomFormState(); 
+
+} 
+
+} 
+
+ 
+
+ 
+
+class MyCustomFormState extends State<MycustomForm> { final _formKey = GlobalKey<FormState>(); 
+
+ @override 
+
+Widget build(BuildContext context) { return Form( 
+
+key: _formKey, 
+
+child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [ TextFormField( 
+
+decoration: const InputDecoration( icon: Icon(Icons.person), labelText: 'Username', 
+
+hintText: 'Enter your Username', 
+
+), 
+
+validator: (value) { 
+
+if (value == null || value.isEmpty) { return 'please enter some text'; 
+
+} 
+
+return null; 
+
+}), 
+
+TextFormField( 
+
+decoration: const InputDecoration( icon: Icon(Icons.calendar_today), labelText: 'Date', 
+
+hintText: 'Enter the Date', 
+
+), 
+
+validator: (value) { 
+
+if (value == null || value.isEmpty) { return 'please enter some text'; 
+
+} 
+
+return null; 
+
+}), 
+
+TextFormField( 
+
+decoration: const InputDecoration( icon: Icon(Icons.key), labelText: 'Password', hintText: 'Enter your password', 
+
+), 
+
+validator: (value) { 
+
+if (value == null || value.isEmpty) { return 'please enter some text'; 
+
+} 
+
+return null; 
+
+}), 
+
+ElevatedButton( onPressed: () { 
+
+if (_formKey.currentState!.validate()) { ScaffoldMessenger.of(context).showSnackBar( 
+
+const SnackBar(content: Text('Processing Data')), 
+
+); 
+
+} 
+
+}, 
+
+child: const Text('submit'), 
+
+), 
+
+]), ); 
+
+} 
+
+} 
+
+---------------------------------------------------------------------------------
+
+//Navigation 
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Bottom Navigation Bar Example',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _selectedIndex = 0;
+
+  static List<Widget> _widgetOptions = <Widget>[
+    Text('Home'),
+    Text('Favorites'),
+    Text('Profile'),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Bottom Navigation Bar Example'),
+      ),
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: 'Favorites',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+      ),
+    );
+  }
+}
+
+-----------------------------------------------------------------------------------
+
+//Gestures
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Single Button with Gesture Example',
+      home: Center(child: GestureDetector(
+        onTap: () {print('Button Pressed');},
+        child: Container(
+          padding: EdgeInsets.symmetric(vertical: 8, horizontal: 7),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            color: Colors.blue,
+          ),
+          child: const Text("Press Me", style: TextStyle(color: Colors.white),),
+        ),
+        
+      )),
+    );
+  }
+}
+
+
